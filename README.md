@@ -1,8 +1,8 @@
-#About
+## About
 
 Здесь различные конфиги и небольшая инструкция об установке Arch linux на i3+polybar+zsh
 
-# Установка Arch(в VBOX)
+## Установка Arch(в VBOX)
 
 http://dkhramov.dp.ua/Comp.InstallArchOnVitrualbox#.X7bBgc0zYuU  
 
@@ -143,7 +143,9 @@ vboxvideo
 # Кастомизация
 
 #### Обновляемся
+```
 pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip #keychain
+```
 
 #### Создаем пользователя
 ```bash
@@ -198,11 +200,11 @@ https://xakep.ru/2017/03/22/geek-desktop/
  pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome -noconfirm -needed
  ```
 ---
-**!!!!Чтобы работало копирование, необходимо установить и настроить clipboard-manager**
+Чтобы работало копирование, необходимо установить и настроить clipboard-manager
 https://wiki.archlinux.org/index.php/clipboard
-Например, xfce4-clipman-plugin
----
+Например, xfce4-clipman-plugin  
 
+---
 
 #### Настройка urxvt
 
@@ -261,7 +263,7 @@ https://www.youtube.com/watch?v=ex87GoUEcac
 
 
 
-# Файлы необходимые для актуализации в git
+## Файлы необходимые для актуализации в git
 
 Плагины для urvxt: `/usr/lib/urxvt/perl`
 ```
