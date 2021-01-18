@@ -1,0 +1,786 @@
+[01/09/21, 18:49:11:323] info: 
+╔═════════════════════════════════════════════════════╗
+║      Slack 4.12.1, linux 5.10.5-arch1-1 on x64      ║
+╚═════════════════════════════════════════════════════╝ 
+[01/09/21, 18:49:11:326] info: Configured logger via 
+{
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 1
+}
+[01/09/21, 18:49:11:327] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.12.1",
+  "PACKAGE_MANIFEST.commit": "9742c2c",
+  "PACKAGE_MANIFEST.branch": "HEAD",
+  "PACKAGE_MANIFEST.useSentry": true
+}
+[01/09/21, 18:49:11:392] info: Could not load previous electron version 
+[01/09/21, 18:49:11:565] info: Store: persist/PERSIST 
+[01/09/21, 18:49:11:569] info: Store: UPDATE_SETTINGS 
+{
+  "locale": "en-US"
+}
+[01/09/21, 18:49:11:572] info: Migrating from redux-persist@v4 
+[01/09/21, 18:49:11:573] info: Finished migrating state 
+{
+  "keys": [
+    "_persist"
+  ],
+  "version": 1
+}
+[01/09/21, 18:49:11:574] info: Store: persist/REHYDRATE 
+{
+  "_persist": "Persistence version: 1"
+}
+[01/09/21, 18:49:11:575] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 0,
+  "interval": 18
+}
+[01/09/21, 18:49:11:577] info: Store: INITIALIZE 
+{
+  "resourcePath": "/usr/lib/slack/resources/app.asar",
+  "bootFragments": []
+}
+[01/09/21, 18:49:11:580] info: persistUuid:: Generated uuid 
+{
+  "uuid": "4294f25d-f312-5600-87bb-a08f6615e159"
+}
+[01/09/21, 18:49:11:580] info: persistUuid:: Uuid persisted successfully 
+[01/09/21, 18:49:11:581] info: getIsUpdateSupported: Updates are not supported 
+{
+  "version": "4.12.1",
+  "reasons": [
+    "using Linux"
+  ],
+  "distribution": "DDL",
+  "executable": "/usr/lib/slack"
+}
+[01/09/21, 18:49:11:590] info: Starting Sentry 
+[01/09/21, 18:49:11:701] warn: Failed to install protocol handler for slack:// links 
+[01/09/21, 18:49:11:708] warn: Couldn't get Linux distro info from lsb_release, trying fallback to get Linux distro info 
+{
+  "error": {
+    "stack": "Error: Command failed: lsb_release -a --short\n/bin/sh: line 1: lsb_release: command not found\n\n    at ChildProcess.exithandler (child_process.js:312:12)\n    at ChildProcess.emit (events.js:315:20)\n    at ChildProcess.EventEmitter.emit (domain.js:483:12)\n    at maybeClose (internal/child_process.js:1021:16)\n    at Socket.<anonymous> (internal/child_process.js:443:11)\n    at Socket.emit (events.js:315:20)\n    at Socket.EventEmitter.emit (domain.js:483:12)\n    at Pipe.<anonymous> (net.js:674:12)",
+    "message": "Command failed: lsb_release -a --short\n/bin/sh: line 1: lsb_release: command not found\n",
+    "killed": false,
+    "code": 127,
+    "signal": null,
+    "cmd": "lsb_release -a --short",
+    "stdout": "",
+    "stderr": "/bin/sh: line 1: lsb_release: command not found\n"
+  },
+  "stackFrameString": "[{\"columnNumber\":12,\"lineNumber\":312,\"fileName\":\"child_process.js\",\"functionName\":\"ChildProcess.exithandler\",\"source\":\"    at ChildProcess.exithandler (child_process.js:312:12)\"},{\"columnNumber\":20,\"lineNumber\":315,\"fileName\":\"events.js\",\"functionName\":\"ChildProcess.emit\",\"source\":\"    at ChildProcess.emit (events.js:315:20)\"},{\"columnNumber\":12,\"lineNumber\":483,\"fileName\":\"domain.js\",\"functionName\":\"ChildProcess.EventEmitter.emit\",\"source\":\"    at ChildProcess.EventEmitter.emit (domain.js:483:12)\"},{\"columnNumber\":16,\"lineNumber\":1021,\"fileName\":\"internal/child_process.js\",\"functionName\":\"maybeClose\",\"source\":\"    at maybeClose (internal/child_process.js:1021:16)\"},{\"columnNumber\":11,\"lineNumber\":443,\"fileName\":\"internal/child_process.js\",\"functionName\":\"Socket.<anonymous>\",\"source\":\"    at Socket.<anonymous> (internal/child_process.js:443:11)\"},{\"columnNumber\":20,\"lineNumber\":315,\"fileName\":\"events.js\",\"functionName\":\"Socket.emit\",\"source\":\"    at Socket.emit (events.js:315:20)\"},{\"columnNumber\":12,\"lineNumber\":483,\"fileName\":\"domain.js\",\"functionName\":\"Socket.EventEmitter.emit\",\"source\":\"    at Socket.EventEmitter.emit (domain.js:483:12)\"},{\"columnNumber\":12,\"lineNumber\":674,\"fileName\":\"net.js\",\"functionName\":\"Pipe.<anonymous>\",\"source\":\"    at Pipe.<anonymous> (net.js:674:12)\"}]"
+}
+[01/09/21, 18:49:11:714] info: getLinuxDistro: getos 
+{
+  "res": {
+    "os": "linux",
+    "dist": "Arch Linux"
+  }
+}
+[01/09/21, 18:49:11:715] info: Store: READY 
+{
+  "resourcePath": "/usr/lib/slack/resources/app.asar",
+  "bootFragments": [],
+  "appVersion": "4.12.1",
+  "is64Bit": true,
+  "isGpuCompositionAvailable": true,
+  "isTitleBarHidden": false,
+  "platform": "linux",
+  "platformVersion": {
+    "major": 5,
+    "minor": 10,
+    "build": 5
+  },
+  "releaseChannel": "prod",
+  "developerMenuOverride": false,
+  "uuid": "4294f25d-f312-5600-87bb-a08f6615e159",
+  "sessionId": "NDI5NGYyNWQtZjMxMi01NjAwLTg3YmItYTA4ZjY2MTVlMTU5XzE2MTAyMDczNTE1ODA=",
+  "distribution": "DDL",
+  "isUpdateSupported": false,
+  "linux": {
+    "os": "Arch Linux",
+    "name": "Arch Linux ",
+    "release": "",
+    "codename": ""
+  }
+}
+[01/09/21, 18:49:11:728] info: initializeApplicationEpic: Welcome to Slack 4.12.1 x64 
+[01/09/21, 18:49:11:732] info: AutoLoginEpic: Checking for autologin. 
+[01/09/21, 18:49:11:867] info: Store: SET_ACCESSIBILITY_SUPPORT_ENABLED 
+[01/09/21, 18:49:11:867] info: Store: CREATE_WINDOW 
+{
+  "type": "main"
+}
+[01/09/21, 18:49:11:868] info: Store: UPDATE_SETTINGS 
+{
+  "isSignedIntoSlackOrg": false
+}
+[01/09/21, 18:49:11:873] info: Store: UPDATE_SETTINGS 
+{
+  "useHwAcceleration": true,
+  "launchOnStartup": false,
+  "PrefSSBFileDownloadPath": "/home/dmitriy/Downloads",
+  "hasRunApp": true
+}
+[01/09/21, 18:49:11:876] info: System configuration information 
+{
+  "info": {
+    "total_memory_in_gb": 14,
+    "gpuFeatures": {
+      "2d_canvas": "enabled",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "oop_rasterization": "disabled_off",
+      "opengl": "enabled_on",
+      "protected_video_decode": "unavailable_off",
+      "rasterization": "disabled_software",
+      "skia_renderer": "enabled_on",
+      "video_decode": "disabled_software",
+      "vulkan": "disabled_off",
+      "webgl": "enabled",
+      "webgl2": "enabled"
+    },
+    "cpu_model": "Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz",
+    "cpu_logical_core": 4,
+    "cpu_clock_speed": 2711,
+    "gpuDevice": [
+      {
+        "active": true,
+        "cudaComputeCapabilityMajor": 0,
+        "deviceId": 1029,
+        "vendorId": 5549
+      }
+    ],
+    "machine_model_name": "unknown",
+    "machine_model_version": "unknown"
+  }
+}
+[01/09/21, 18:49:11:921] info: Store: TOKEN_FILE_PROCESSED 
+[01/09/21, 18:49:11:923] info: AutoLoginEpic: Processing token file for autologin. 
+[01/09/21, 18:49:11:924] info: AutoLoginEpic: Completed autologin processing — successfully logged in 0 workspaces. 
+[01/09/21, 18:49:11:924] info: AutoLoginEpic: Setting default sign-in team to null 
+[01/09/21, 18:49:11:925] info: Store: AUTOLOGIN_TEAMS_COMPLETE 
+[01/09/21, 18:49:11:927] info: Store: UPDATE_SETTINGS 
+{
+  "defaultSigninTeam": null
+}
+[01/09/21, 18:49:11:974] info: MainWindowEpics: Setting main window ID 
+{
+  "id": 1
+}
+[01/09/21, 18:49:11:978] info: Store: WINDOW_CREATED 
+{
+  "type": "main",
+  "id": 1,
+  "frame": {
+    "isHtmlFullScreen": false,
+    "isFullScreen": false,
+    "isMinimized": false,
+    "isMaximized": false,
+    "isVisible": false,
+    "isFocused": false,
+    "bounds": {
+      "x": 1520,
+      "y": 780,
+      "width": 800,
+      "height": 600
+    }
+  }
+}
+[01/09/21, 18:49:11:985] info: Watching for keyboard layout changes 
+[01/09/21, 18:49:11:998] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 1,
+  "interval": 406
+}
+[01/09/21, 18:49:11:999] info: Store: UPDATE_SETTINGS 
+{
+  "keyboardLayout": "us,ru"
+}
+[01/09/21, 18:49:12:003] info: registerLifeCycleEvents: Registering webContents:1 
+[01/09/21, 18:49:12:005] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "unloaded"
+}
+[01/09/21, 18:49:12:658] info: Finished download of spellcheck dictionary 
+{
+  "code": "en-US"
+}
+[01/09/21, 18:49:12:664] info: Spellcheck dictionary initialized 
+{
+  "code": "en-US"
+}
+[01/09/21, 18:49:13:004] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "bounds": {
+      "x": 1152,
+      "y": 432,
+      "width": 1536,
+      "height": 1296
+    },
+    "isMaximized": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:13:007] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "bounds": {
+      "x": 1152,
+      "y": 432,
+      "width": 1536,
+      "height": 1296
+    },
+    "isMaximized": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:13:730] info: registerLifeCycleEvents: webContents:1 from 'unloaded' to 'loaded' took 1726 ms 
+[01/09/21, 18:49:13:730] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "loaded"
+}
+[01/09/21, 18:49:13:733] info: initializeMainWindowEpic: Showing main window 
+{
+  "maximized": false,
+  "shouldHide": false,
+  "fullScreen": false
+}
+[01/09/21, 18:49:13:738] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 2,
+  "interval": 1751
+}
+[01/09/21, 18:49:13:739] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:13:741] info: Store: MAIN_WINDOW_SHOWN 
+[01/09/21, 18:49:13:750] info: Store: UPDATE_SETTINGS 
+{
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1152,
+      "y": 432,
+      "width": 1536,
+      "height": 1296
+    }
+  }
+}
+[01/09/21, 18:49:13:753] info: Store: CLEAR_NOTIFICATIONS 
+[01/09/21, 18:49:13:779] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFullScreen": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:13:798] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFocused": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:13:966] info: registerLifeCycleEvents: webContents:1 is type 'app' 
+[01/09/21, 18:49:13:967] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+}
+[01/09/21, 18:49:13:977] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": true,
+    "isFocused": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:14:702] info: Store: SET_NETWORK_STATUS online
+[01/09/21, 18:49:14:802] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    },
+    "isMaximized": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:14:810] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    },
+    "isMaximized": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:14:864] info: Store: UPDATE_SETTINGS 
+{
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+}
+[01/09/21, 18:49:16:565] info: Store: persist/FLUSH 
+[01/09/21, 18:49:21:587] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFocused": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:22:451] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFocused": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:23:829] info: Main window closed, consider it a quit action 
+{
+  "runFromTray": true,
+  "keepAppInTaskbar": false
+}
+[01/09/21, 18:49:23:830] info: Store: QUIT_APP 
+[01/09/21, 18:49:23:839] info: EpicHelpers: Flushing cookie store 
+[01/09/21, 18:49:23:844] info: Disposing basic_auth_handler_BasicAuthHandler… 
+[01/09/21, 18:49:23:846] info: Disposing tray_handler_TrayHandler… 
+[01/09/21, 18:49:23:848] info: Disposing app_menu_AppMenu… 
+[01/09/21, 18:49:23:849] info: Store: DOWNLOADS_CLEANED_UP 
+[01/09/21, 18:49:23:852] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:49:23:865] info: EpicHelpers: Flushing local-settings.json 
+[01/09/21, 18:49:23:866] info: LocalSettings: Setting useHwAcceleration to true 
+[01/09/21, 18:49:23:876] info: LocalSettings: Setting useTsLogBackend to false 
+[01/09/21, 18:49:23:882] info: Store: persist/FLUSH 
+[01/09/21, 18:49:23:999] info: Closing main window 
+{
+  "id": 1
+}
+[01/09/21, 18:49:24:012] info: registerLifeCycleEvents: webContents:1 from 'loaded' to 'page-closed' took 10045 ms 
+[01/09/21, 18:49:24:013] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "page-closed"
+}
+[01/09/21, 18:49:24:030] info: All windows are closed, trying to teardown application 
+[01/09/21, 18:49:24:031] info: Store: REMOVE_WINDOW 1
+[01/09/21, 18:49:24:036] info: 
++-------------------+--------------+
+| FLUSH_COOKIES     | 24.933626ms  |
+|-------------------+--------------+
+| FLUSH_STORE       | 2.575892ms   |
+|-------------------+--------------+
+| REMOVE_DICT       | 97.111266ms  |
+|-------------------+--------------+
+| FLUSH_TELEMETRY   | 15.525905ms  |
+|-------------------+--------------+
+| CLOSE_MAIN_WINDOW | 34.926585ms  |
+|-------------------+--------------+
+| TOTAL             | 196.599584ms |
++-------------------+--------------+ 
+[01/09/21, 18:49:24:036] info: quitApplicationEpic: Finished, calling app.quit 
+[01/09/21, 18:49:57:795] info: 
+╔═════════════════════════════════════════════════════╗
+║      Slack 4.12.1, linux 5.10.5-arch1-1 on x64      ║
+╚═════════════════════════════════════════════════════╝ 
+[01/09/21, 18:49:57:797] info: Configured logger via 
+{
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 1
+}
+[01/09/21, 18:49:57:798] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.12.1",
+  "PACKAGE_MANIFEST.commit": "9742c2c",
+  "PACKAGE_MANIFEST.branch": "HEAD",
+  "PACKAGE_MANIFEST.useSentry": true
+}
+[01/09/21, 18:49:58:033] info: Store: persist/PERSIST 
+[01/09/21, 18:49:58:037] info: Store: UPDATE_SETTINGS 
+{
+  "locale": "en-US"
+}
+[01/09/21, 18:49:58:045] info: Store: persist/REHYDRATE 
+{
+  "appTeams": "[DEPRECATED]",
+  "bookmarks": "[REDACTED]",
+  "dialog": "[REDACTED]",
+  "downloads": "No downloads",
+  "enterprise": "No Enterprise orgs",
+  "settings": {
+    "isSignedIntoSlackOrg": false,
+    "locale": "en-US",
+    "notificationMethod": null,
+    "releaseChannelOverride": null
+  },
+  "teams": "[DEPRECATED]",
+  "webapp": "[REDACTED]",
+  "workspaces": "Not signed in to any workspaces",
+  "workspacesMeta": "Selected workspace: null",
+  "_persist": "Persistence version: 1"
+}
+[01/09/21, 18:49:58:047] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 0,
+  "interval": 22
+}
+[01/09/21, 18:49:58:050] info: Store: INITIALIZE 
+{
+  "resourcePath": "/usr/lib/slack/resources/app.asar",
+  "bootFragments": []
+}
+[01/09/21, 18:49:58:054] info: getInstanceUuid:: Read existing uuid from persisted location 
+{
+  "uuid": "4294f25d-f312-5600-87bb-a08f6615e159"
+}
+[01/09/21, 18:49:58:054] info: getIsUpdateSupported: Updates are not supported 
+{
+  "version": "4.12.1",
+  "reasons": [
+    "using Linux"
+  ],
+  "distribution": "DDL",
+  "executable": "/usr/lib/slack"
+}
+[01/09/21, 18:49:58:065] info: Starting Sentry 
+[01/09/21, 18:49:58:113] warn: Failed to install protocol handler for slack:// links 
+[01/09/21, 18:49:58:120] warn: Couldn't get Linux distro info from lsb_release, trying fallback to get Linux distro info 
+{
+  "error": {
+    "stack": "Error: Command failed: lsb_release -a --short\n/bin/sh: line 1: lsb_release: command not found\n\n    at ChildProcess.exithandler (child_process.js:312:12)\n    at ChildProcess.emit (events.js:315:20)\n    at ChildProcess.EventEmitter.emit (domain.js:483:12)\n    at maybeClose (internal/child_process.js:1021:16)\n    at Socket.<anonymous> (internal/child_process.js:443:11)\n    at Socket.emit (events.js:315:20)\n    at Socket.EventEmitter.emit (domain.js:483:12)\n    at Pipe.<anonymous> (net.js:674:12)",
+    "message": "Command failed: lsb_release -a --short\n/bin/sh: line 1: lsb_release: command not found\n",
+    "killed": false,
+    "code": 127,
+    "signal": null,
+    "cmd": "lsb_release -a --short",
+    "stdout": "",
+    "stderr": "/bin/sh: line 1: lsb_release: command not found\n"
+  },
+  "stackFrameString": "[{\"columnNumber\":12,\"lineNumber\":312,\"fileName\":\"child_process.js\",\"functionName\":\"ChildProcess.exithandler\",\"source\":\"    at ChildProcess.exithandler (child_process.js:312:12)\"},{\"columnNumber\":20,\"lineNumber\":315,\"fileName\":\"events.js\",\"functionName\":\"ChildProcess.emit\",\"source\":\"    at ChildProcess.emit (events.js:315:20)\"},{\"columnNumber\":12,\"lineNumber\":483,\"fileName\":\"domain.js\",\"functionName\":\"ChildProcess.EventEmitter.emit\",\"source\":\"    at ChildProcess.EventEmitter.emit (domain.js:483:12)\"},{\"columnNumber\":16,\"lineNumber\":1021,\"fileName\":\"internal/child_process.js\",\"functionName\":\"maybeClose\",\"source\":\"    at maybeClose (internal/child_process.js:1021:16)\"},{\"columnNumber\":11,\"lineNumber\":443,\"fileName\":\"internal/child_process.js\",\"functionName\":\"Socket.<anonymous>\",\"source\":\"    at Socket.<anonymous> (internal/child_process.js:443:11)\"},{\"columnNumber\":20,\"lineNumber\":315,\"fileName\":\"events.js\",\"functionName\":\"Socket.emit\",\"source\":\"    at Socket.emit (events.js:315:20)\"},{\"columnNumber\":12,\"lineNumber\":483,\"fileName\":\"domain.js\",\"functionName\":\"Socket.EventEmitter.emit\",\"source\":\"    at Socket.EventEmitter.emit (domain.js:483:12)\"},{\"columnNumber\":12,\"lineNumber\":674,\"fileName\":\"net.js\",\"functionName\":\"Pipe.<anonymous>\",\"source\":\"    at Pipe.<anonymous> (net.js:674:12)\"}]"
+}
+[01/09/21, 18:49:58:127] info: getLinuxDistro: getos 
+{
+  "res": {
+    "os": "linux",
+    "dist": "Arch Linux"
+  }
+}
+[01/09/21, 18:49:58:128] info: Store: READY 
+{
+  "resourcePath": "/usr/lib/slack/resources/app.asar",
+  "bootFragments": [],
+  "appVersion": "4.12.1",
+  "is64Bit": true,
+  "isGpuCompositionAvailable": true,
+  "isTitleBarHidden": false,
+  "platform": "linux",
+  "platformVersion": {
+    "major": 5,
+    "minor": 10,
+    "build": 5
+  },
+  "releaseChannel": "prod",
+  "developerMenuOverride": false,
+  "uuid": "4294f25d-f312-5600-87bb-a08f6615e159",
+  "sessionId": "NDI5NGYyNWQtZjMxMi01NjAwLTg3YmItYTA4ZjY2MTVlMTU5XzE2MTAyMDczOTgwNTQ=",
+  "distribution": "DDL",
+  "isUpdateSupported": false,
+  "linux": {
+    "os": "Arch Linux",
+    "name": "Arch Linux ",
+    "release": "",
+    "codename": ""
+  }
+}
+[01/09/21, 18:49:58:144] info: initializeApplicationEpic: Welcome to Slack 4.12.1 x64 
+[01/09/21, 18:49:58:149] info: AutoLoginEpic: Checking for autologin. 
+[01/09/21, 18:49:58:251] info: Store: SET_ACCESSIBILITY_SUPPORT_ENABLED 
+[01/09/21, 18:49:58:252] info: Store: CREATE_WINDOW 
+{
+  "type": "main"
+}
+[01/09/21, 18:49:58:253] info: Store: UPDATE_SETTINGS 
+{
+  "isSignedIntoSlackOrg": false
+}
+[01/09/21, 18:49:58:258] info: Store: UPDATE_SETTINGS 
+{
+  "useHwAcceleration": true
+}
+[01/09/21, 18:49:58:261] info: System configuration information 
+{
+  "info": {
+    "total_memory_in_gb": 14,
+    "gpuFeatures": {
+      "2d_canvas": "enabled",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "oop_rasterization": "disabled_off",
+      "opengl": "enabled_on",
+      "protected_video_decode": "unavailable_off",
+      "rasterization": "disabled_software",
+      "skia_renderer": "enabled_on",
+      "video_decode": "disabled_software",
+      "vulkan": "disabled_off",
+      "webgl": "enabled",
+      "webgl2": "enabled"
+    },
+    "cpu_model": "Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz",
+    "cpu_logical_core": 4,
+    "cpu_clock_speed": 2711,
+    "gpuDevice": [
+      {
+        "active": true,
+        "cudaComputeCapabilityMajor": 0,
+        "deviceId": 1029,
+        "vendorId": 5549
+      }
+    ],
+    "machine_model_name": "unknown",
+    "machine_model_version": "unknown"
+  }
+}
+[01/09/21, 18:49:58:276] info: Store: TOKEN_FILE_PROCESSED 
+[01/09/21, 18:49:58:278] info: AutoLoginEpic: Processing token file for autologin. 
+[01/09/21, 18:49:58:278] info: AutoLoginEpic: Completed autologin processing — successfully logged in 0 workspaces. 
+[01/09/21, 18:49:58:278] info: AutoLoginEpic: Setting default sign-in team to null 
+[01/09/21, 18:49:58:279] info: Store: AUTOLOGIN_TEAMS_COMPLETE 
+[01/09/21, 18:49:58:280] info: Store: UPDATE_SETTINGS 
+{
+  "defaultSigninTeam": null
+}
+[01/09/21, 18:49:58:296] info: MainWindowEpics: Setting main window ID 
+{
+  "id": 1
+}
+[01/09/21, 18:49:58:300] info: Store: WINDOW_CREATED 
+{
+  "type": "main",
+  "id": 1,
+  "frame": {
+    "isHtmlFullScreen": false,
+    "isFullScreen": false,
+    "isMinimized": false,
+    "isMaximized": false,
+    "isVisible": false,
+    "isFocused": false,
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+}
+[01/09/21, 18:49:58:305] info: Watching for keyboard layout changes 
+[01/09/21, 18:49:58:315] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 1,
+  "interval": 256
+}
+[01/09/21, 18:49:58:318] info: registerLifeCycleEvents: Registering webContents:1 
+[01/09/21, 18:49:58:319] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "unloaded"
+}
+[01/09/21, 18:50:00:438] info: registerLifeCycleEvents: webContents:1 from 'unloaded' to 'loaded' took 2120 ms 
+[01/09/21, 18:50:00:439] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "loaded"
+}
+[01/09/21, 18:50:00:442] info: initializeMainWindowEpic: Showing main window 
+{
+  "maximized": false,
+  "shouldHide": false,
+  "fullScreen": false
+}
+[01/09/21, 18:50:00:445] info: Store: RECORD_PERFORMANCE_TIMING 
+{
+  "phase": 2,
+  "interval": 2138
+}
+[01/09/21, 18:50:00:447] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:00:448] info: Store: MAIN_WINDOW_SHOWN 
+[01/09/21, 18:50:00:457] info: Store: UPDATE_SETTINGS 
+{
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+}
+[01/09/21, 18:50:00:460] info: Store: CLEAR_NOTIFICATIONS 
+[01/09/21, 18:50:00:538] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFullScreen": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:00:580] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isFocused": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:00:632] info: registerLifeCycleEvents: webContents:1 is type 'app' 
+[01/09/21, 18:50:00:632] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+}
+[01/09/21, 18:50:00:653] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": true,
+    "isFocused": true
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:01:532] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "bounds": {
+      "x": 2562,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    },
+    "isMaximized": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:01:597] info: Store: SET_NETWORK_STATUS online
+[01/09/21, 18:50:01:599] info: Store: UPDATE_SETTINGS 
+{
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 2562,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+}
+[01/09/21, 18:50:03:051] info: Store: persist/FLUSH 
+[01/09/21, 18:50:07:720] info: Main window closed, consider it a quit action 
+{
+  "runFromTray": true,
+  "keepAppInTaskbar": false
+}
+[01/09/21, 18:50:07:720] info: Store: QUIT_APP 
+[01/09/21, 18:50:07:736] info: EpicHelpers: Flushing cookie store 
+[01/09/21, 18:50:07:738] info: Disposing basic_auth_handler_BasicAuthHandler… 
+[01/09/21, 18:50:07:739] info: Disposing tray_handler_TrayHandler… 
+[01/09/21, 18:50:07:740] info: Disposing app_menu_AppMenu… 
+[01/09/21, 18:50:07:740] info: Store: DOWNLOADS_CLEANED_UP 
+[01/09/21, 18:50:07:743] info: Store: SET_WINDOW_FRAME 
+{
+  "id": 1,
+  "frame": {
+    "isVisible": false
+  },
+  "fromEvent": true
+}
+[01/09/21, 18:50:07:797] info: EpicHelpers: Flushing local-settings.json 
+[01/09/21, 18:50:07:798] info: Store: persist/FLUSH 
+[01/09/21, 18:50:07:814] info: Closing main window 
+{
+  "id": 1
+}
+[01/09/21, 18:50:07:845] info: registerLifeCycleEvents: webContents:1 from 'loaded' to 'page-closed' took 7213 ms 
+[01/09/21, 18:50:07:846] info: Store: UPSERT_WEB_CONTENTS 
+{
+  "id": 1,
+  "state": "page-closed"
+}
+[01/09/21, 18:50:07:977] info: All windows are closed, trying to teardown application 
+[01/09/21, 18:50:07:978] info: Store: REMOVE_WINDOW 1
+[01/09/21, 18:50:07:983] info: 
++-------------------+--------------+
+| FLUSH_COOKIES     | 61.297134ms  |
+|-------------------+--------------+
+| FLUSH_STORE       | 1.273951ms   |
+|-------------------+--------------+
+| REMOVE_DICT       | 4.008103ms   |
+|-------------------+--------------+
+| FLUSH_TELEMETRY   | 7.497532ms   |
+|-------------------+--------------+
+| CLOSE_MAIN_WINDOW | 167.658191ms |
+|-------------------+--------------+
+| TOTAL             | 247.205197ms |
++-------------------+--------------+ 
+[01/09/21, 18:50:07:983] info: quitApplicationEpic: Finished, calling app.quit 

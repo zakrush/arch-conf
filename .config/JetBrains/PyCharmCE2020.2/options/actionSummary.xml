@@ -1,0 +1,75 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <data>
+      <entry key="$Delete">
+        <ActionSummary times="1" last="1610204373048" />
+      </entry>
+      <entry key="$Undo">
+        <ActionSummary times="7" last="1610204464598" />
+      </entry>
+      <entry key="ChooseDebugConfiguration">
+        <ActionSummary times="1" last="1610204244700" />
+      </entry>
+      <entry key="ChooseRunConfiguration">
+        <ActionSummary times="2" last="1610204163577" />
+      </entry>
+      <entry key="EditorBackSpace">
+        <ActionSummary times="15" last="1610204824675" />
+      </entry>
+      <entry key="EditorChooseLookupItem">
+        <ActionSummary times="1" last="1610204829741" />
+      </entry>
+      <entry key="EditorChooseLookupItemReplace">
+        <ActionSummary times="2" last="1610204833129" />
+      </entry>
+      <entry key="EditorDelete">
+        <ActionSummary times="2" last="1610204414649" />
+      </entry>
+      <entry key="EditorDown">
+        <ActionSummary times="10" last="1610204837515" />
+      </entry>
+      <entry key="EditorLeft">
+        <ActionSummary times="10" last="1610204412283" />
+      </entry>
+      <entry key="EditorLeftWithSelection">
+        <ActionSummary times="19" last="1610204413827" />
+      </entry>
+      <entry key="EditorLineEnd">
+        <ActionSummary times="1" last="1610204417447" />
+      </entry>
+      <entry key="EditorRight">
+        <ActionSummary times="4" last="1610204409348" />
+      </entry>
+      <entry key="EditorUp">
+        <ActionSummary times="2" last="1610204825792" />
+      </entry>
+      <entry key="FindUsages">
+        <ActionSummary times="1" last="1610204517586" />
+      </entry>
+      <entry key="GotoDeclaration">
+        <ActionSummary times="1" last="1610204352090" />
+      </entry>
+      <entry key="Run">
+        <ActionSummary times="5" last="1610204871195" />
+      </entry>
+      <entry key="ShowNavBar">
+        <ActionSummary times="1" last="1610204498490" />
+      </entry>
+      <entry key="Stop">
+        <ActionSummary times="4" last="1610204862838" />
+      </entry>
+      <entry key="WelcomeScreen.OpenDirectoryProject">
+        <ActionSummary times="1" last="1610204066442" />
+      </entry>
+      <entry key="com.intellij.ide.ReopenProjectAction">
+        <ActionSummary times="1" last="1610205266576" />
+      </entry>
+      <entry key="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+        <ActionSummary times="2" last="1610204386087" />
+      </entry>
+      <entry key="com.intellij.openapi.ui.DialogWrapper$5">
+        <ActionSummary times="1" last="1610205250367" />
+      </entry>
+    </data>
+  </component>
+</application>

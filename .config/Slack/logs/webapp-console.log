@@ -1,0 +1,148 @@
+[01/09/21, 18:49:13:970] info: 
+╔═════════════════════════════════════════════════════╗
+║      Slack 4.12.1, linux 5.10.5-arch1-1 on x64      ║
+╚═════════════════════════════════════════════════════╝ 
+[01/09/21, 18:49:13:971] info: Configured logger via 
+{
+  "enableConsoleTransport": true,
+  "identifierOverride": "webapp-console",
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 3
+}
+[01/09/21, 18:49:13:971] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.12.1",
+  "PACKAGE_MANIFEST.commit": "9742c2c",
+  "PACKAGE_MANIFEST.branch": "HEAD",
+  "PACKAGE_MANIFEST.useSentry": true
+}
+[01/09/21, 18:49:13:971] info: Starting Sentry 
+[01/09/21, 18:49:13:972] warn: (electron) crashReporter.start is deprecated in the renderer process. Call it from the main process instead. 
+[01/09/21, 18:49:13:972] info: Creating desktop interface object 
+[01/09/21, 18:49:13:972] info: Exposing context bridge 
+[01/09/21, 18:49:13:972] warn: TELEMETRY You tried to get a team-specific telemeter but didn’t provide enough context and are getting the generic telemeter instead which is likely not what you want. 
+[01/09/21, 18:49:13:972] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "loaded"
+} 
+[01/09/21, 18:49:13:972] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 2,
+  "interval": 1751
+} 
+[01/09/21, 18:49:13:973] info: Store: MAIN_WINDOW_SHOWN  
+[01/09/21, 18:49:13:973] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1152,
+      "y": 432,
+      "width": 1536,
+      "height": 1296
+    }
+  }
+} 
+[01/09/21, 18:49:13:973] info: Store: CLEAR_NOTIFICATIONS  
+[01/09/21, 18:49:13:985] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+} 
+[01/09/21, 18:49:14:701] info: Network status check {
+  "elapsed_time_ms": 956,
+  "navigator_online": true,
+  "api_test": "online"
+} 
+[01/09/21, 18:49:14:709] info: Store: SET_NETWORK_STATUS online 
+[01/09/21, 18:49:14:867] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+} 
+[01/09/21, 18:49:23:859] info: Store: QUIT_APP  
+[01/09/21, 18:49:23:862] info: Store: DOWNLOADS_CLEANED_UP  
+[01/09/21, 18:50:00:636] info: 
+╔═════════════════════════════════════════════════════╗
+║      Slack 4.12.1, linux 5.10.5-arch1-1 on x64      ║
+╚═════════════════════════════════════════════════════╝ 
+[01/09/21, 18:50:00:637] info: Configured logger via 
+{
+  "enableConsoleTransport": true,
+  "identifierOverride": "webapp-console",
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 3
+}
+[01/09/21, 18:50:00:637] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.12.1",
+  "PACKAGE_MANIFEST.commit": "9742c2c",
+  "PACKAGE_MANIFEST.branch": "HEAD",
+  "PACKAGE_MANIFEST.useSentry": true
+}
+[01/09/21, 18:50:00:638] info: Starting Sentry 
+[01/09/21, 18:50:00:638] warn: (electron) crashReporter.start is deprecated in the renderer process. Call it from the main process instead. 
+[01/09/21, 18:50:00:638] info: Creating desktop interface object 
+[01/09/21, 18:50:00:638] info: Exposing context bridge 
+[01/09/21, 18:50:00:639] warn: TELEMETRY You tried to get a team-specific telemeter but didn’t provide enough context and are getting the generic telemeter instead which is likely not what you want. 
+[01/09/21, 18:50:00:639] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "loaded"
+} 
+[01/09/21, 18:50:00:639] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 2,
+  "interval": 2138
+} 
+[01/09/21, 18:50:00:639] info: Store: MAIN_WINDOW_SHOWN  
+[01/09/21, 18:50:00:639] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 1282,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+} 
+[01/09/21, 18:50:00:639] info: Store: CLEAR_NOTIFICATIONS  
+[01/09/21, 18:50:00:672] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+} 
+[01/09/21, 18:50:01:596] info: Network status check {
+  "elapsed_time_ms": 1139,
+  "navigator_online": true,
+  "api_test": "online"
+} 
+[01/09/21, 18:50:01:601] info: Store: SET_NETWORK_STATUS online 
+[01/09/21, 18:50:01:602] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 2562,
+      "y": 40,
+      "width": 1276,
+      "height": 2118
+    }
+  }
+} 
+[01/09/21, 18:50:07:777] info: Store: QUIT_APP  
+[01/09/21, 18:50:07:797] info: Store: DOWNLOADS_CLEANED_UP  

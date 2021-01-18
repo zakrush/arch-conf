@@ -1,0 +1,79 @@
+URxvt.termName: rxvt-256color
+URxvt.scrollBar: false
+URxvt.scrollstyle: false
+
+!Colors
+! Color-scheme : Relic Dark
+! Author       : stark <stark@openmailbox.org>
+
+*background: #1D2426
+*foreground: #8FA388
+
+! Alternate foreground
+!*foreground: #AB9C71
+
+*cursorColor: #BE5E1E
+
+*color0:  #39474A
+*color1:  #986345
+*color2:  #788249
+*color3:  #9B6A46
+*color4:  #3E5951
+*color5:  #B9924A
+*color6:  #5d796a
+*color7:  #977D5E
+*color8:  #4C5F63
+*color9:  #B07350
+*color10: #869151
+*color11: #AF6B42
+*color12: #567A6E
+*color13: #D69D55
+*color14: #668574
+*color15: #AB9C71
+
+
+!URxvt.font: xft JetBrains Mono:size=12
+!URxvt.boldFont: xft:JetBrains Mono:size=12:style=bold
+!URxvt.italicFont: xft:JetBrains Mono:size=12:style=italic
+
+URxvt.font: xft:monospace:pixelsize=16:style=regular
+!URxvt.font: xft:FuraMono Nerd Font:pixelsize=16
+URxvt.boldFont:         xft:monospace:pixelsize=16:style=bold
+URxvt.italicFont: xft:monospace:pixelsize=16:style=italic
+URxvt.letterSpace: -2
+
+! Сохраняем 5000 строк
+URxvt*saveLines: 10000
+
+! Modes
+URxvt.perl-ext-common:     default,font-size,url-select,clipboard,keyboard-select
+! URxvt.perl-ext-common: default,matcher,config-reload,url-select,resize-font
+!URxvt.urlLauncher: /usr/bin/chromium
+! URxvt.matcher.rend.0: Uline Bold fg5
+! URxvt.matcher.button: 1
+
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/chromium
+URxvt.url-select.underline: true
+
+URxvt.iso14755: False
+
+!resize fonts
+!URxvt.perl-ext-common: ...,font-size
+URxvt.keysym.C-Up:              perl:font-size:increase
+URxvt.keysym.C-Down:            perl:font-size:decrease
+URxvt.keysym.C-S-Up:            perl:font-size:incglobal
+URxvt.keysym.C-S-Down:          perl:font-size:decglobal
+
+
+! paste and copy into console 
+! https://unix.stackexchange.com/questions/294337/rebinding-ctrl-alt-cv-to-ctrl-shift-cv-in-urxvt-9-20/361540#361540
+! URxvt.keysym.Shift-Control-C: eval:selection_to_cipboard
+! URxvt.keysym.Shift-Control-V: eval:paste_cipboard
+
+urxvt.keysym.Control-Shift-c:perl:clipboard:copy
+urxvt.keysym.Control-Shift-v:perl:clipboard:paste
+
+
+
