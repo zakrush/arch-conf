@@ -216,7 +216,7 @@ nano ~/.Xresources
 ##### Установка файлов окружения
 ```bash
 yay cherrytree slack micro
-pacman -S firefox chromium pycharm-community-edition urvx telegram notepadqq python-pip telegram-desktop jq python-pip python pycharm-community-edition
+pacman -S firefox chromium pycharm-community-edition urvx telegram notepadqq python-pip telegram-desktop jq python-pip python pycharm-community-edition dnsutils
 ```
 
 
