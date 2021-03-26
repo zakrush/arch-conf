@@ -1,4 +1,4 @@
-## About
+# About
 
 Здесь различные конфиги и небольшая инструкция об установке Arch linux на i3+polybar+zsh
 
@@ -144,7 +144,10 @@ vboxvideo
 
 #### Обновляемся
 ```
-pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip #keychain
+pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip openssh compton nitrogen #keychain
+
+**compton** - работа с графикой
+**nitrogen** - обои
 ```
 
 #### Создаем пользователя
@@ -191,9 +194,10 @@ grep “#MAKEFLAGS=\”-j” /etc/makepkg.conf
 Совмещал статьи:
 https://ordanax.github.io/i3wm_polybar
 https://xakep.ru/2017/03/22/geek-desktop/
+https://losst.ru/nastrojka-i3wm
 
 ```bash
- pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ttf-clear-sans speedtest-cli ttf-font-awesome feh --noconfirm --needed
+ pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ttf-clear-sans speedtest-cli ranger rofi ttf-font-awesome nitrogen picom feh --noconfirm --needed
  ```
  Устанавливаем шрифты  
  ```bash 
@@ -213,10 +217,10 @@ pacman -S rxvt-unicode  urxvt-perls
 nano ~/.Xresources
 ```
  
-##### Установка файлов окружения
+##### Установка файлов окружения и нужное ПО
 ```bash
-yay cherrytree slack micro
-pacman -S firefox chromium pycharm-community-edition urvx telegram notepadqq python-pip telegram-desktop jq python-pip python pycharm-community-edition dnsutils docker docker-compose
+yay cherrytree slack micro vscode
+pacman -S firefox chromium pycharm-community-edition urvxt telegram notepadqq python-pip telegram-desktop jq python-pip python pycharm-community-edition dnstools
 ```
 
 
@@ -276,3 +280,15 @@ https://www.youtube.com/watch?v=ex87GoUEcac
 ~/.p10k.zsh
 ~/.config/*
 ```
+
+## Helpfull links
+Краткие хоткеи
+https://eax.me/i3wm/#:~:text=Mod%20%2B%20F%20%E2%80%94%20%D1%80%D0%B0%D1%81%D0%BA%D1%80%D1%8B%D1%82%D1%8C%20%D0%BE%D0%BA%D0%BD%D0%BE%20%D0%B2%D0%BE,%D0%BD%D0%B0%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%2C%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D0%B0)%3B
+
+https://igancev.ru/2020-01-05-installing-and-configuring-i3wm-on-arch-linux !!! очень качественная статья
+
+https://github.com/arcolinux/arcolinux-i3wm Множество конфигов
+https://github.com/arcolinux/arcolinux-i3wm/blob/master/etc/skel/.config/i3/picom.conf конфиг Picom
+https://igancev.ru/2020-04-18-terminal-emulator-alacritty про терминал alacritty
+
+
