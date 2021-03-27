@@ -290,5 +290,6 @@ https://igancev.ru/2020-01-05-installing-and-configuring-i3wm-on-arch-linux !!! 
 https://github.com/arcolinux/arcolinux-i3wm Множество конфигов
 https://github.com/arcolinux/arcolinux-i3wm/blob/master/etc/skel/.config/i3/picom.conf конфиг Picom
 https://igancev.ru/2020-04-18-terminal-emulator-alacritty про терминал alacritty
-
+https://gist.github.com/tz4678/bd33f94ab96c96bc6719035fcac2b807 про arch и все что связано с работой с ним
+https://habr.com/ru/post/515750/
 
