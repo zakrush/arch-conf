@@ -16,7 +16,7 @@ fdisk -l
 ```
 cfdisk /dev/sda
 ```
-для VM размечаем `bootable 1G /dev/sda1`(для биоса) и `dev/sda2` для оставшегося диска)
+Размечаем `bootable 1G /dev/sda1`(для биоса) и `dev/sda2` для оставшегося диска)
 
 ##### Подготовка диска
 
@@ -27,7 +27,7 @@ mkfs.ext4 /dev/sda2
 
 # монтируем
 mount /dev/sda2 /mnt
-mkdir /mnt/{dev,proc,sys,etc,run,tmp}
+mkdir /mnt/etc
 mkdir -p /mnt/var/lib/pacman
 mount --bind /dev /mnt/dev
 mount --bind /proc /mnt/proc
@@ -44,7 +44,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ##### Добавляем зеркало в `/etc/pacman.d/mirrorlist`
 ```
 #устанавливаем нужные тулы
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub linux-headers
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub linux-headers networkmanager network-manager-applet
 
 #or
 #pacman -r /mnt -Sy base base-devil grub nano linux-headers net-tools dhcpcd
@@ -102,6 +102,17 @@ umount /mnt/boot
 umount /mnt
 reboot
 ```
+### DualBOOT
+
+`lsblk` ищем диск с Windows
+`fdisl -l /dev/<disk>` ищем загрузчик Windows
+`mount /dev/sdc1 /mount` монтируем загрузчик
+Если не монтируется из-за ntfs то устанавливаем доп. прогу, так же устанавливаем пакет ядра
+`pacman -S ntfs-3g os-prober`
+бэкапим конфиг GRUB и генерируем новый: 
+```cp /boot/grub/grub.cfg /boot/grub/grub.cfg-origin
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### Файл подкачки
 ```bash
@@ -144,9 +155,8 @@ vboxvideo
 
 #### Обновляемся
 ```
-pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip openssh compton nitrogen #keychain
+pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip openssh  nitrogen 
 
-**compton** - работа с графикой
 **nitrogen** - обои
 ```
 
@@ -288,8 +298,13 @@ https://eax.me/i3wm/#:~:text=Mod%20%2B%20F%20%E2%80%94%20%D1%80%D0%B0%D1%81%D0%B
 https://igancev.ru/2020-01-05-installing-and-configuring-i3wm-on-arch-linux !!! очень качественная статья
 
 https://github.com/arcolinux/arcolinux-i3wm Множество конфигов
+
 https://github.com/arcolinux/arcolinux-i3wm/blob/master/etc/skel/.config/i3/picom.conf конфиг Picom
+
 https://igancev.ru/2020-04-18-terminal-emulator-alacritty про терминал alacritty
+
 https://gist.github.com/tz4678/bd33f94ab96c96bc6719035fcac2b807 про arch и все что связано с работой с ним
+
 https://habr.com/ru/post/515750/
 
+https://rtfm.co.ua/arch-linux-ustanovka-s-efi-i-dual-boot-s-windows/#Windows_dual_boot  ПРо дуалБуут
