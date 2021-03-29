@@ -261,6 +261,8 @@ startx
 ```bash
 pacman -S zsh zsh-completions
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+yay -S ccat-git 
+#colored cat
 ```
 Полезная статья на [Хабр](https://habr.com/ru/post/516004/)  
 ```bash
@@ -272,9 +274,12 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 ```
 Для настройки и кастомизации zsh используется ***Powerlevel10k***
 
-#### i3statusbar
-Настраивается тут: `~/.config/i3status/config`
-Полезный [link](https://igancev.ru/2020-05-11-configuring-i3status-in-i3wm)
+`echo 'ZSH_THEME="powerlevel10k/powerlevel10k" \nPOWERLEVEL9K_MODE="nerdfont-complete"' >> ~./zshrc`
+Конфигурируем:
+`p10k configure`
+
+Или
+`cp arch-config/.p10k.zsh ~/.p10k.zsh`
 
 
 ### POLYBAR
