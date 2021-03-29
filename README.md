@@ -29,9 +29,6 @@ mkfs.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 mkdir /mnt/etc
 mkdir -p /mnt/var/lib/pacman
-mount --bind /dev /mnt/dev
-mount --bind /proc /mnt/proc
-mount --bind /sys /mnt/sys
 
 # устанавливаем время
 timedatectl set-ntp true
@@ -44,11 +41,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ##### Добавляем зеркало в `/etc/pacman.d/mirrorlist`
 ```
 #устанавливаем нужные тулы
-pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub linux-headers networkmanager network-manager-applet
-
-#or
-#pacman -r /mnt -Sy base base-devil grub nano linux-headers net-tools dhcpcd
+pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub linux-headers networkmanager network-manager-applet git ntpd
 ```
+
 ### Работа в системе
 ##### Переключам chroot
 ```
@@ -58,20 +53,28 @@ arch-chroot /mnt
 ##### Локаль 
 В `etc/locale.gen` раскомментируем
 ru_RU.UTF-8 UTF-8
+en_EN.UTF-8 UTF-8
 
 ```bash
-echo 'LANG=ru_RU.UTF-8' > /etc/locale.conf
+echo 'LANG=en_EN.UTF-8' > /etc/locale.conf
 locale-gen
 ```
 
-Включаем dhcpcd сервис для получения адресов
-`systemctl enable dhcpcd`
 
 ##### Время 
 ```bash
 ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 hwclock — systohc
 ```
+Edit /etc/ntpd
+set 
+`server ru.pool.ntp.org`
+
+```
+systemctl enable ntpd.service
+systemctl start ntpd.service
+```
+
 
 ##### Загрузчик
 ```bash
@@ -114,6 +117,8 @@ reboot
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+**Into Windows change localtime to UTC**
+
 ### Файл подкачки
 ```bash
 fallocate -l 1G /swapfile
@@ -155,7 +160,7 @@ vboxvideo
 
 #### Обновляемся
 ```
-pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip openssh  nitrogen 
+pacman -Syyuu && pacman -S python docker htop git bash-completion wget lsof unzip p7zip openssh  nitrogen
 
 **nitrogen** - обои
 ```
@@ -178,6 +183,8 @@ makepkg -si && \
 ```
 
 #### Устанавливаем менеджер логина и темы к нему 
+**WARN:** After i3 install
+
 ```bash
 pacman -S slim slim-themes
 ```
@@ -190,13 +197,12 @@ systemctl enable slim
 Тут в примере 4 ядра.
 ```bash
 #Инфа по ядрам: 
-lscpu | grep “CPU(s):” | grep -v NUMA:
-grep “COMPRESSXZ=(xz” /etc/makepkg.conf && \
-grep “#MAKEFLAGS=\”-j” /etc/makepkg.conf && \
-sudo sed -i ‘s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T 4 -z -)/g’ /etc/makepkg.conf && \
-sudo sed -i ‘s/#MAKEFLAGS=”-j2"/MAKEFLAGS=”-j9"/g’ /etc/makepkg.conf
-grep “COMPRESSXZ=(xz” /etc/makepkg.conf && \
-grep “#MAKEFLAGS=\”-j” /etc/makepkg.conf 
+lscpu | grep “CPU(s):” | grep -v NUMA | grep "COMPRESSXZ=(xz" /etc/makepkg.conf && \
+grep "MAKEFLAGS=" /etc/makepkg.conf && \
+sudo sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T 4 -z -)/g' /etc/makepkg.conf && \
+sudo sed -i 's/#MAKEFLAGS=”-j2"/MAKEFLAGS=”-j9"/g' /etc/makepkg.conf && \
+grep "MAKEFLAGS=" /etc/makepkg.conf &&\
+grep "COMPRESSXZ=(xz" /etc/makepkg.conf
 ```
 
 
@@ -207,7 +213,11 @@ https://xakep.ru/2017/03/22/geek-desktop/
 https://losst.ru/nastrojka-i3wm
 
 ```bash
- pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ttf-clear-sans speedtest-cli ranger rofi ttf-font-awesome nitrogen picom feh --noconfirm --needed
+ pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ranger rofi numlockx nitrogen picom feh setxkbmap redshift xorg-xrandr xclip alacritty pulseaudio pavucontrol --noconfirm --needed
+ ```
+ ### Bluetooth
+ ```bash
+ pacman -S bluez bluez-utils pulseaudio-bluetooth blueman
  ```
  Устанавливаем шрифты  
  ```bash 
@@ -216,7 +226,7 @@ https://losst.ru/nastrojka-i3wm
 ---
 Чтобы работало копирование, необходимо установить и настроить clipboard-manager
 https://wiki.archlinux.org/index.php/clipboard
-Например, xfce4-clipman-plugin  
+Например, xclip
 
 ---
 
@@ -229,12 +239,22 @@ nano ~/.Xresources
  
 ##### Установка файлов окружения и нужное ПО
 ```bash
-yay cherrytree slack micro vscode
-pacman -S firefox chromium pycharm-community-edition urvxt telegram notepadqq python-pip telegram-desktop jq python-pip python pycharm-community-edition dnstools
+yay cherrytree slack micro vscode google-chrome-stable polybar
+pacman -S firefox notepadqq python-pip telegram-desktop jq dnstools networkmanager-openvpn
 ```
 
 
 **COLORS!!!(Можно взять [отсюда](http://dotshare.it/category/terms/colors/))**
+
+
+###START i3
+
+```
+cp /arch-config/.xinitrc ~/.xinitrc
+cp -r /arch-config/.config/i3/* ~/.config/i3/
+#copy other path to config (picom, polybar, etc)
+startx
+```
 
 
 #### Устанавливаем zsh
