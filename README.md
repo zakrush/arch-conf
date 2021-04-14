@@ -293,12 +293,55 @@ yay -S polybar ttf-weather-icons ttf-clear-sans tlp
 sudo pacman -S ttf-font-awesome 
 pip install --user speedtest-cli
 ```
-   
+
+## Printscreen
+from here
+https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
+
+### Requirements
+- maim
+- xclip
+
+### Set-up
+
+Set this on your i3 config file `~/.i3/config`
+
+```
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+```
+
+> You may remove the default screenshot shortcuts to prevent error
+
+### What it do
+
+| Feature | Shortcut |
+| :----- | :------ |
+| Full Screen | `PrtScrn` |
+| Selection | `Shift` + `PrtScrn` |
+| Active Window | `Super` + `PrtScrn` |
+| Clipboard Full Screen | `Ctrl` + `PrtScrn` |
+| Clipboard Selection | `Ctrl` + `Shift` + `PrtScrn` |
+| Clipboard Active Window | `Ctrl` + `Super` + `PrtScrn` |
+
+> All the screen shots are saved on `~/Pictures/CURRENT_DATE`
+
+> `super` key is the _windows_ key 
+
+
 ## Полезные ссылки и ресурсы
 
 http://dotshare.it/category/terms/colors/  
 https://medium.com/@mudrii/arch-linux-installation-on-hw-with-i3-windows-manager-part-1-5ef9751a0be  install on VM video:  
 https://www.youtube.com/watch?v=ex87GoUEcac
+
 
 
 
