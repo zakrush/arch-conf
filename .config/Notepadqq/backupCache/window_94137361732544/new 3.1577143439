@@ -1,0 +1,17 @@
+=================================================================
+[Error [ValidationError]: "domainId" cannot be infinity] {
+  _original: { login: 'anale4itic', password: '11', domainId: Infinity },
+  details: [
+    {
+      message: '"domainId" cannot be infinity',
+      path: [Array],
+      type: 'number.infinity',
+      context: [Object]
+    }
+  ],
+  expose: true,
+  statusCode: 400,
+  status: 400
+}
+crash was written to crash-d0e4aa2270e571560dd917f82eeda896dc7de9e63a86987d9436bd04b97d1b7c
+

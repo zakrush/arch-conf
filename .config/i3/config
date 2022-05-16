@@ -11,16 +11,34 @@
 
 set $mod Mod4
 
+################################
+# KEY DEFINITIONS TO REMEMBER  #
+################################
+
+# $Mod = WINDOWS key or Super key or Mod4
+# Mod1 = ALT key
+# Control = CTRL key
+# Shift = SHIFT key
+# Escape = ESCAPE key
+# Return = ENTER or RETURN key
+# KP_Enter = Keypad Enter
+# Pause = PAUSE key
+# Print = PRINT key
+# Tab = TAB key
+
+
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+#################
+# 	Fonts		#
+#################
 
-font pango:xos4 Terminus 10
+font pango: JetBrains Mono 9
+#font xft:URWGothic-Book 10
+#font pango:xos4 Terminus 10
 
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -31,15 +49,71 @@ font pango:xos4 Terminus 10
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
+
+# NumLock
+exec --no-startup-id numlockx on
+
+#################################
+######   Color of Monitors  #####
+#################################
+
+exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 56:43
 
 
+#####################################################################################################################
+#################                          Single and Dual screen                                   #################
+#####################################################################################################################
 
-# EXEC(sturtup)
+# setting variables for later use
+# use xrandr and/or arandr to know the names of your monitors
+# use this line to tell which monitor is on the right
+
+exec --no-startup-id xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x0
+exec --no-startup-id xrandr --output HDMI-0 --mode 3840x2160 --pos 0x1080
+
+set $firstMonitor HDMI-0
+set $secondMonitor DVI-D-0
+
+workspace 1 output $firstMonitor
+workspace 2 output $firstMonitor
+workspace 3 output $firstMonitor
+workspace 4 output $firstMonitor
+workspace 5 output $firstMonitor
+workspace 6 output $secondMonitor
+workspace 7 output $secondMonitor
+workspace 8 output $secondMonitor
+workspace 9 output $secondMonitor
+workspace 10 output $secondMonitor
+
+
+######################
+# EXEC(sturtup)      #
+######################
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
-exec --no-startup-id xfce4-clipman
-#POLYBAR
+exec --no-startup-id  xclip #xfce4-clipman
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b #wallpapers
+
+#disable sevkeys
+exec --nostartup-id setxkbmap -option srvkeys:none
+
+#Autotiling 
+exec_always --no-startup-id autotiling
+
+#####################################################################################################################
+#################                          picom of i3wm                                          #################
+#####################################################################################################################
+
+#if you want transparency on non-focused windows, ...
+#exec_always --no-startup-id "killall -q picom; picom --config $HOME/.config/i3/picom.conf"
+
+#bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+
+
+###########################
+######  POLYBAR    #######
+###########################
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id autocutsel
 
@@ -54,25 +128,43 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Focus doesn't follow the mouse
+focus_follows_mouse no
+
 # start a terminal
-bindsym $mod+Return exec urxvt #xterm #i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id alacritty #urxvt #xterm #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xos Terminus-8'
+
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xos Terminus-8'
+
+bindsym Mod1+Tab exec --no-startup-id  rofi -combi-modi window#drun -show combi -modi combi -show-icons -theme "gruvbox-dark-hard" -font "hack 16"
+bindsym $mod+d exec --no-startup-id rofi -font "hack 10" -show run
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec rofi -modi drun,run -show drun
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
+
+###########################
+#     MOUSE FOCUS		  #
+###########################
+bindsym --whole-window --border $mod+button4 focus left
+bindsym --whole-window --border $mod+button5 focus right
+bindsym --whole-window --border $mod+shift+button4 workspace prev
+bindsym --whole-window --border $mod+shift+button5 workspace next
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -92,6 +184,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+##########################################
+#             Tiling parameters          #
+##########################################
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -101,7 +197,8 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# change container layout (stacked, tabbed, toggle split) #
+
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -116,7 +213,11 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
+
+###############################
+#     Workspaces              #
+###############################
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -195,14 +296,69 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
+#####################################
+#    FLOATING MODE FOR APPLICATIONS #
+#####################################
+
+# see here https://unix.stackexchange.com/questions/450700/opening-a-programme-in-a-floating-window-in-i3
+
+#Slack
+for_window [class="Slack" instance="slack"] floating enable
+
+# https://major.io/2019/02/08/automatic-floating-windows-in-i3/
+for_window [window_role="About"] floating enable
+
+for_window [class="Rocket.Chat" instance="rocket.chat"] floating enable
+# for_window [class="TelegramDesktop" instance="telegram-desktop"] floating enable
 
 ##################################
 # Shortcut to start application  #
 ##################################
 
 bindsym $mod+Ctrl+f exec --no-startup-id firefox
-bindsym $mod+Ctrl+s exec --no-startup-id slack
-bindsym $mod+Ctrl+c exec --no-startup-id chromium
+bindsym $mod+Ctrl+s exec --no-startup-id rocketchat-desktop
+bindsym $mod+Ctrl+c exec --no-startup-id google-chrome-stable #chromium
 bindsym $mod+Ctrl+t exec --no-startup-id telegram-desktop
 bindsym $mod+Ctrl+p exec --no-startup-id pycharm
+bindsym $mod+Ctrl+r exec alacritty -e ranger
+bindsym $mod+Ctrl+v exec --no-startup-id code
+bindsym $mod+Ctrl+b exec --no-startup-id cd /home/dm/Job/BurpPro && java -javaagent:BurpSuiteLoader_v2021.8.4.jar -noverify -jar burpsuite_pro_v2021.8.4.jar
+
+
+#####################################
+#  Power Management Bindings        #
+#####################################
+
+bindsym $mod+Ctrl+Mod1+l exec sudo systemctl suspend
+bindsym $mod+Ctrl+Mod1+s exec sudo systemctl poweroff
+bindsym $mod+Ctrl+Mod1+r exec sudo systemctl reboot
+
+#####################################################################################################################
+#################                          moving around workspaces                                 #################
+#####################################################################################################################
+
+
+# next/previous workspace
+
+bindsym Mod1+Up workspace next
+bindsym Mod1+Down workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+
+######################################################################################################################
+##############                         Printscreen                                               #####################
+######################################################################################################################
+
+# Screenshots
+bindsym Print exec --no-startup-id maim /home/$USER//Images/Screenshots/screenshot_full_$(date +"%Y-%m-%H-%M-%S").jpg
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER//Images/Screenshots/screenshot_%Y-%m-%H-%M-%S.jpg"
+bindsym Shift+Print exec --no-startup-id maim --select /home/$USER//Images/Screenshots/screenshot_$(date +"%Y-%m-%H-%M-%S").jpg
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 

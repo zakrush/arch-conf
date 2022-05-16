@@ -1,6 +1,0 @@
-2020/12/10-10:39:32.777 20b Reusing MANIFEST /home/dmitriy/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2020/12/10-10:39:32.777 20b Recovering log #47
-2020/12/10-10:39:32.780 20b Reusing old log /home/dmitriy/.config/chromium/Default/Local Storage/leveldb/000047.log 
-2020/12/10-10:40:37.806 20b Level-0 table #51: started
-2020/12/10-10:40:37.815 20b Level-0 table #51: 13645 bytes OK
-2020/12/10-10:40:37.821 20b Delete type=0 #47

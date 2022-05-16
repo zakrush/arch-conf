@@ -1,0 +1,87 @@
+id: xxs-usergroup
+
+info:
+  name: XSS Basic
+  author: Dmitriy Tishkin
+  severity: High
+  description: Stored XXS into RVN
+  tags: xss
+
+
+
+headless:
+  - steps:
+
+      # Аутентификация
+      - args:
+          url: "{{BaseURL}}/login"
+        action: navigate
+      - action: waitload
+
+      # переписываем поведение на windows.data для обнаружения XSS. Без этого матчер не работает!
+      - action: script
+        args:
+          hook: true
+          code: "(function() { window.alert = function() { window.data = 'found' } })()"
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div/div/div/form/div[1]/input
+        action: click
+      - action: waitload
+      - args:
+          by: xpath
+          value: admin
+          xpath: /html/body/div[1]/div/div/div/div/form/div[1]/input
+        action: text
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div/div/div/form/div[2]/input
+        action: click
+      - action: waitload
+      - args:
+          by: xpath
+          value: admin
+          xpath: /html/body/div[1]/div/div/div/div/form/div[2]/input
+        action: text
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div/div/div/form/div[3]/button
+        action: click
+      - action: waitload
+
+        # Go to Settings
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div/a[11]/span/span
+        action: click
+      - action: waitload
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div[2]/div[11]/div/div/div/div/div/div[1]/div/div[2]/div/div[2]/table[7]/tbody/tr/td/div/span
+        action: click
+      - action: waitload
+        #  Click some user 123
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div[2]/div[11]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/div[1]/div/div[2]/div[1]/div[2]/table[24]/tbody/tr/td[1]/div/span
+        action: click
+      - action: waitload
+      - args:
+          by: xpath
+          xpath: /html/body/div[1]/div/div[2]/div[11]/div/div/div/div/div/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/div[12]/div/div/div[1]/div/ul[1]/li/input
+        action: click
+      - action: waitload
+
+      - action: script
+        args:
+          code: window.alert
+        name: alert
+
+
+    matchers:
+      - part: alert
+        type: word
+        words:
+          - 'found'
+
+

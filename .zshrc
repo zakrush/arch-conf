@@ -7,15 +7,23 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=${PATH}:/home/dm/.local/bin:$PYENV_ROOT/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/dmitriy/.oh-my-zsh"
+export ZSH="/home/dm/.oh-my-zsh"
+export DD_APIv2_TOKEN="21a5dbebcf616756c076157f6e6dc1f3d6b4967e"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+
+########################################################################################
+#   Comment for disable error see https://github.com/romkatv/powerlevel10k/issues/622  #
+########################################################################################
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Set list of themes to pick from when loading at random
@@ -53,6 +61,8 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -76,9 +86,29 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting pip docker docker-compose wd)
+plugins=(git 
+		 zsh-syntax-highlighting 
+		 zsh-autosuggestions 
+		 colorize
+		 docker-compose 
+		 cargo 
+		 npm 
+		 pip 
+		 dirhistory 
+		 autojump
+		 web-search 
+		 alias-finder)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/nvm/init-nvm.sh 
+
+########################################################################################
+# Config for colorize https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize##
+#######################################################################################
+
+# ZSH_COLORIZE_TOOL=chroma
+ZSH_COLORIZE_CHROMA_FORMATTER="true-color"
+ZSH_COLORIZE_STYLE="zenburn"
 
 # User configuration
 
@@ -110,7 +140,7 @@ alias scp='scp -r'
 alias rm='rm -r'
 alias mkdir='mkdir -p'
 
-alias ls='ls -F --color=auto'
+alias ls='ls --color=auto'
 alias la='ls -A --color=auto'
 alias ll='ls -lh --color=auto -h'
 alias lla='ll -Ah --color=auto -h'
@@ -118,5 +148,46 @@ alias cp='cp -r'
 
 alias grep='grep --colour=auto'
 
+alias openfortigui='/usr/bin/openfortigui > /dev/null 2>&1 &'
+
+# servers ssh
+
+alias ssh='TERM=xterm-256color ssh'
+
+alias vps-ssh='ssh zakrush@45.137.64.132 -p 2210 -i ~/.ssh/zomro'
+alias fuzz-server='ssh user@fuzzing01.sec.dev.rvision.local'
+alias msfconsole="msfconsole -x \"db_connect user@metasploit\""
+alias defect="ssh user@defect-dojo.sec.dev.rvision.local"
+alias zapserver="ssh user@zap01.sec.dev.rvision.local"
+alias zomro="ssh zakrush@45.137.64.132 -p 2210"
+
+alias zaproxy='zaproxy > /dev/null 2>&1 &'
+alias dc="docker-compose"
+
+#tools
+alias sqlmap="python ~/Job/tools/sqlmap/sqlmap.py"
+
+
+
+
+alias google="web_search google" 
+
+alias cat="ccat"
+alias jsfuzz='node /home/dm/Job/R-Vision/tools/jsfuzz/build/src/index.js'
+
+
+
+#alias cat='ccat'
+
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Enable autojump
+[[ -s /home/dm/.autojump/etc/profile.d/autojump.sh ]] && source /home/dm/.autojump/etc/profile.d/autojump.sh
+
+[[ -d $HOME/go/bin ]] && export PATH=$HOME/go/bin:$PATH
+
+# autoload -U compinit && compinit -u

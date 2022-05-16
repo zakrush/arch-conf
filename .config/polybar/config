@@ -17,11 +17,16 @@
 [settings]
 pseudo-transparency = true
 #Цвета панели
+
 [colors]
-background = #0021457A
+background = #1f1f1f
+foreground = #eee
+
+#background = #0021457A
 background-alt = #1463B6
-foreground = #dfdfdf
+#foreground = #dfdfdf
 foreground-alt = #568DDD
+
 primary = #2A76FF
 secondary = #218DC8
 alert = #bd2c40
@@ -29,14 +34,15 @@ alert = #bd2c40
 
 #размеры панели
 #указываем название бара к которому будет обрящаться скрипт автозапуска launch.sh в стоке [bar/название бара]
-[bar/example]
-#monitor = ${env:MONITOR:HDMI-1}
+
+[bar/bottom]
+monitor = ${env:MONITOR:DVI-D-0}
 
 #Ширина панели
 width = 100%
 
 #высота панели 
-height = 20
+height = 40
 
  
 #offset-x = 1%
@@ -46,7 +52,7 @@ height = 20
 #зафиксированый центр или динамический true / false
 fixed-center = true 
 
-#локаль панели отвечает за вывод некотоых данных например дата
+#локаль панели отвечает за вывод некоторых данных например дата
 locale = ru_RU.UTF-8 
 
 background = ${colors.background}
@@ -54,8 +60,8 @@ foreground = ${colors.foreground}
 
 
 #размер нижней линии под модулями
-line-size = 1
-;line-color = #f00
+line-size = 2
+line-color = ${color.background}
 
 
 #отступы содержимого панели от края
@@ -69,19 +75,24 @@ module-margin-right = 1
 
 
 #Шрифты
-font-0 = Iosevka Nerd Font:style=Medium:size=8;3
-font-1 = FontAwesome5Free:style=Solid:size=8.5;3.5
-font-2 = Weather Icons:size=8.5;3.5
-font-3 = FontAwesome5Brands:style=Solid:size=8.5;3.5
+;font-0 = Iosevka Nerd Font:style=Medium:size=8;3
+;font-1 = FontAwesome5Free:style=Solid:size=8.5;3.5
+;font-3 = FontAwesome5Brands:style=Solid:size=8.5;3.5
 
+font-0 = NotoSans-Regular:size=9;0
+font-1 = Material\ Icons:size=11;2
+font-2 = xos4\ Terminus:size=14;0
+font-3 = Siji:pixelsize=11;1
+font-4 = FontAwesome:size=11;0
+;font-5 = Weather Icons:size=8.5;3.5
 
 
 #######################################
 ## РАСПОЛОЖЕНИЕ И АКТИВАЦИЯ МОДУЛЕЙ  ##
 #######################################
 modules-left = i3 updates-pacman-aurhelper speedtest cpu memory filesystem
-modules-center = title openweathermap-fullfeatured
-modules-right = xkeyboard powermenu popup-calendar
+modules-center = title
+modules-right = network xkeyboard powermenu popup-calendar
 
 
 
@@ -96,6 +107,19 @@ tray-detached = false
 #########################
 ## ПОДКЛЮЧЕНЫЕ МОДУЛИ  ##
 #########################
+[module/network]
+type = internal/network
+interface = enp3s0
+;interface = wlp5s0
+interval = 1.0
+ping-interval = 10
+
+format-connected = <label-connected>
+label-connected =  %downspeed%    %upspeed%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+
 [module/updates-pacman-aurhelper]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-pacman-aurhelper.sh
@@ -110,14 +134,14 @@ mount-0 = /
 
 label-mounted = %{F#c38611} %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = #66
 
 
 [module/openweathermap-fullfeatured]
 type = custom/script
 exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 interval = 600
-label-font = 3
+label-font = 5
 
 [settings]
 #Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
@@ -238,13 +262,33 @@ ws-icon-9 = 10;10
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-#format-overline = #408AB9
-#format-underline = #408AB9
-label = %{F#1ecb0b} CPU %percentage%% 
-
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
 
 
 ############################################################################################################
@@ -254,13 +298,22 @@ label = %{F#1ecb0b} CPU %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 2
-format-prefix = " "
-#format-prefix-foreground = ${colors.foreground-alt}
-#format-overline = #61C07C
-#format-underline = #61C07C
-label = %{F#8d61ff}  MEM %percentage_used%%
+format = <label> <bar-used>
+label = RAM
 
+bar-used-width = 30
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
 
 
 ############################################################################################################
@@ -273,9 +326,9 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 label-NAME-maxlen = 10
 format-prefix = ""
-#format-prefix-foreground = ${colors.foreground-alt}
-#format-prefix-overline = CF5E7F
-#format-prefix-underline = CF5E7F
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-overline = CF5E7F
+format-prefix-underline = CF5E7F
 
 label-layout =  %layout%
 #label-layout-overline = CF5E7F

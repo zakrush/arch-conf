@@ -1,0 +1,11 @@
+const filterXSS = require('xss');
+
+const xssOptions = {
+    stripIgnoreTag: false,
+    stripIgnoreTagBody: ['script'],
+    whiteList: {},
+  };
+var line = '<SCRIPT/SRC="http://xss.rocks/xss.js">';
+var html = filterXSS(line, xssOptions)
+
+console.log(html)
