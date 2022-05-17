@@ -213,7 +213,7 @@ https://xakep.ru/2017/03/22/geek-desktop/
 https://losst.ru/nastrojka-i3wm
 
 ```bash
- pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ranger rofi numlockx nitrogen picom feh setxkbmap redshift xorg-xrandr xclip alacritty pulseaudio pavucontrol --noconfirm --needed
+ pacman -S xorg-server xorg-apps xorg-xinit i3-wm numlockx xterm dmenu ranger rofi numlockx nitrogen picom feh xorg-setxkbmap redshift xorg-xrandr xclip alacritty pulseaudio pavucontrol --noconfirm --needed
  ```
  ### Bluetooth
  ```bash
@@ -239,8 +239,8 @@ nano ~/.Xresources
  
 ##### Установка файлов окружения и нужное ПО
 ```bash
-yay cherrytree slack micro vscode google-chrome-stable polybar
-pacman -S firefox notepadqq python-pip telegram-desktop jq dnstools networkmanager-openvpn
+yay cherrytree slack micro vscode google-chrome polybar
+pacman -S firefox notepadqq python-pip telegram-desktop jq dnsutils networkmanager-openvpn
 ```
 
 
