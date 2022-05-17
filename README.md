@@ -376,3 +376,8 @@ https://gist.github.com/tz4678/bd33f94ab96c96bc6719035fcac2b807 про arch и �
 https://habr.com/ru/post/515750/
 
 https://rtfm.co.ua/arch-linux-ustanovka-s-efi-i-dual-boot-s-windows/#Windows_dual_boot  ПРо дуалБуут
+
+#### Для refind loader иногда надо делать вот так: 
+```sh
+efibootmgr -c -d /dev/sda --part 1 --loader /boot/EFI/BOOT/bootx64.efi --label "rEFInd"
+```
