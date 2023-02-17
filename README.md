@@ -7,6 +7,7 @@
 https://ctlos.github.io/wiki/btrfs/btrfs-part1/
 https://youtu.be/D7_Xcx1sZq8
 https://habr.com/ru/post/672502/
+https://www.vojtech.net/posts/install-arch-dualboot #dualboot
 
 ```
    29  cfdisk /dev/nvme0n1
@@ -24,6 +25,8 @@ https://habr.com/ru/post/672502/
    41  mount -o subvol=@,compress=zstd /dev/mapper/cryptdisk /mnt
    42  mkdir /mnt/home
    43  mount -o subvol=@home,compress=zstd /dev/mapper/cryptdisk /mnt/home
+   mkdir /mnt/boot
+   mount /dev/nvme0p1 /mnt/boot #монтируем загрузчик
  ```
  
  ```
@@ -31,6 +34,21 @@ https://habr.com/ru/post/672502/
  genfstab -pU /mnt >> /mnt/etc/fstab
  
  ```
+ 
+ ### Создаем загрузчик
+ bootctl --path=/boot install
+
+Create file /boot/loader/entries/arch.conf
+ 
+ **Файл в загрузчике**
+ `arch.conf`
+ ```
+title Arch Linux Stable
+linux /vmlinuz-linux
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
+options cryptdevice=UUID=c6fef343-9918-42bb-b56f-05a54fe1497b:cryptdisk root=/dev/mapper/cryptdisk rootflags=subvol=@ rw
+```
  
  
  
