@@ -98,13 +98,13 @@ window:
 font:
   # Normal (roman) font face
   normal:
-    family: Hack
+    family: Monospace
 
     style: Regular
 
   # Bold font face
   bold:
-    family: Hack
+    family: Monospace
     style: Bold
 
   # Italic font face
@@ -131,7 +131,7 @@ font:
   # spacing.
   offset:
     x: 0
-    y: -2
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the

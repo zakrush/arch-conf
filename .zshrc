@@ -86,12 +86,14 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(git 
 		 zsh-syntax-highlighting 
 		 zsh-autosuggestions 
 		 colorize
 		 docker-compose 
-		 cargo 
+	     rust
+		 # cargo
 		 npm 
 		 pip 
 		 dirhistory 
@@ -100,7 +102,7 @@ plugins=(git
 		 alias-finder)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/nvm/init-nvm.sh 
+source /usr/share/nvm/init-nvm.sh
 
 ########################################################################################
 # Config for colorize https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colorize##
@@ -154,7 +156,7 @@ alias openfortigui='/usr/bin/openfortigui > /dev/null 2>&1 &'
 
 alias ssh='TERM=xterm-256color ssh'
 
-alias vps-ssh='ssh zakrush@45.137.64.132 -p 2210 -i ~/.ssh/zomro'
+alias vps-ssh='ssh zakrush@91.228.56.131'
 alias fuzz-server='ssh user@fuzzing01.sec.dev.rvision.local'
 alias msfconsole="msfconsole -x \"db_connect user@metasploit\""
 alias defect="ssh user@defect-dojo.sec.dev.rvision.local"
@@ -172,7 +174,7 @@ alias sqlmap="python ~/Job/tools/sqlmap/sqlmap.py"
 
 alias google="web_search google" 
 
-alias cat="ccat"
+# alias cat="ccat"
 alias jsfuzz='node /home/dm/Job/R-Vision/tools/jsfuzz/build/src/index.js'
 
 
@@ -191,3 +193,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ -d $HOME/go/bin ]] && export PATH=$HOME/go/bin:$PATH
 
 # autoload -U compinit && compinit -u
+
