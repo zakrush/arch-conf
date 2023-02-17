@@ -2,11 +2,21 @@
 
 Здесь различные конфиги и небольшая инструкция об установке Arch linux на i3+polybar+zsh
 
+## BTRFS + cryptdisk
+солянка из следующих стетай
+https://ctlos.github.io/wiki/btrfs/btrfs-part1/
+https://youtu.be/D7_Xcx1sZq8
+https://habr.com/ru/post/672502/
+
+Как добавить swap file в btrfs
+https://yamadharma.github.io/ru/post/2022/05/20/btrfs-swap-file/
+
 ## Установка Arch(в VBOX)
 
 http://dkhramov.dp.ua/Comp.InstallArchOnVitrualbox#.X7bBgc0zYuU  
 
 ### ДИСК
+
 
 ##### Размечаем диски  
 ```
