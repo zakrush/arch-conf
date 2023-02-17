@@ -8,6 +8,26 @@ https://ctlos.github.io/wiki/btrfs/btrfs-part1/
 https://youtu.be/D7_Xcx1sZq8
 https://habr.com/ru/post/672502/
 
+```
+   29  cfdisk /dev/nvme0n1
+   30  clear
+   31  cryptsetup -y -v luksFormat /dev/nvme0n1p5
+   32  cryptsetup open /dev/nvme0n1p5
+   33  cryptsetup open /dev/nvme0n1p5 cryptdisk
+   34  ls /dev/mapper
+   35  mkfs.btrfs -f /dev/nvme0p5
+   36  mkfs.btrfs -f /dev/mapper/cryptdisk
+   37  mount /dev/mapper/cryptdisk /mnt
+   38  btrfs subvolume create /mnt/@
+   39  btrfs subvolume create /mnt/@home
+   40  umount -R /mnt
+   41  mount -o subvol=@,compress=zstd /dev/mapper/cryptdisk /mnt
+   42  mkdir /mnt/home
+   43  mount -o subvol=@home,compress=zstd /dev/mapper/cryptdisk /mnt/home
+ ```
+ 
+ 
+
 Как добавить swap file в btrfs
 https://yamadharma.github.io/ru/post/2022/05/20/btrfs-swap-file/
 
