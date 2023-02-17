@@ -26,6 +26,13 @@ https://habr.com/ru/post/672502/
    43  mount -o subvol=@home,compress=zstd /dev/mapper/cryptdisk /mnt/home
  ```
  
+ ```
+ pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub linux-headers networkmanager network-manager-applet git ntp btrfs-progs
+ genfstab -pU /mnt >> /mnt/etc/fstab
+ 
+ ```
+ 
+ 
  
 
 Как добавить swap file в btrfs
