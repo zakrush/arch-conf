@@ -49,6 +49,10 @@ initrd /intel-ucode.img
 initrd /initramfs-linux.img
 options cryptdevice=UUID=c6fef343-9918-42bb-b56f-05a54fe1497b:cryptdisk root=/dev/mapper/cryptdisk rootflags=subvol=@ rw
 ```
+Устанвливаем пакеты. (до сборки ядра)
+```
+pacman -Syyuu && pacman -S python docker htop git wget lsof unzip p7zip openssh nitrogen nvidia nvidia-utils nvidia-settings xorg-server-devel opencl-nvidia sddm xorg-apps xorg-xinit i3-wm numlockx dmenu ranger rofi picom feh xorg-setxkbmap xorg-xrandr xclip alacritty pulseaudio pavucontrol bluez bluez-utils pulseaudio-bluetooth blueman noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome
+```
  
  
  
