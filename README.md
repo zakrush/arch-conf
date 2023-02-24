@@ -174,8 +174,13 @@ mkdir sources && \
 cd sources && \
 git clone https://aur.archlinux.org/yay.git && \
 cd yay && \
-makepkg -si && \
+makepkg -si 
 ```
+#### УСТАНОВКА ВСЕХ ПАКЕТОВ, В т.ч. драйвера для xiaomi network
+```
+yay -S python docker htop git wget lsof unzip p7zip nitrogen nvidia-utils nvidia-settings xorg-server-devel sddm xorg-apps xorg-xinit i3-wm numlockx dmenu ranger rofi picom feh xorg-setxkbmap xorg-xrandr xclip alacritty pulseaudio pavucontrol bluez bluez-utils pulseaudio-bluetooth blueman noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome rtw89-dkms-git micro vscode google-chrome polybar firefox notepadnext python-pip telegram-desktop pycharm-professional burpsuite-pro telegram-desktop jq dnsutils networkmanager-openvpn zsh-completions zsh-theme-powerlevel10k-git autojump autotiling nerd-fonts-jetbrains-mono xclip maim
+```
+
 
 #### Устанавливаем менеджер логина и темы к нему 
 ```bash
